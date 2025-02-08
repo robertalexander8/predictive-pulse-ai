@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { CheckCircle, XCircle, Calendar } from "lucide-react";
 import MachineSensors from "./MachineSensors";
@@ -25,7 +24,7 @@ const machines: Machine[] = [
     id: 2,
     name: 'Industrial Robot Arm',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
   },
   {
     id: 3,
