@@ -17,21 +17,21 @@ interface Machine {
 const machines: Machine[] = [
   {
     id: 1,
-    name: 'Assembly Robot',
+    name: 'CNC Milling Machine',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    image: 'https://images.unsplash.com/photo-1565439371134-9b3193b8e414',
   },
   {
     id: 2,
-    name: 'Automated Drone',
+    name: 'Industrial Robot Arm',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1487887235947-a955ef187fcc',
+    image: 'https://images.unsplash.com/photo-1624372644188-66d31e3c7f5c',
   },
   {
     id: 3,
-    name: 'Control Station',
+    name: 'Production Line',
     status: 'down',
-    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
   },
 ];
 
