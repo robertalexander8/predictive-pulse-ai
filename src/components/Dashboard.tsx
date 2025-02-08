@@ -19,13 +19,13 @@ const machines: Machine[] = [
     id: 1,
     name: 'CNC Milling Machine',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1565439371134-9b3193b8e414',
+    image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82',
   },
   {
     id: 2,
     name: 'Industrial Robot Arm',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1624372644188-66d31e3c7f5c',
+    image: 'https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7',
   },
   {
     id: 3,
