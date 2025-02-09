@@ -27,7 +27,7 @@ const machines: Machine[] = [
     id: 2,
     name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: '/lovable-uploads/35b7e282-7b4b-4aee-b5a7-4f6442e16871.png',
+    image: '/lovable-uploads/35b7e282-7b4b-4aee-b5a7-4f6442e16871.jpg',
     location: 'Robotic Assembly Cell 3'
   },
   {
