@@ -18,24 +18,24 @@ interface Machine {
 const machines: Machine[] = [
   {
     id: 1,
-    name: 'CNC Milling Machine',
+    name: 'Haas VF-2 CNC Machine',
     status: 'healthy',
     image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82',
-    location: 'Production Hall A'
+    location: 'Precision Machining Bay'
   },
   {
     id: 2,
-    name: 'Industrial Robot Arm',
+    name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1565939318951-17217c77f4d1',
-    location: 'Assembly Line B'
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    location: 'Robotic Assembly Cell 3'
   },
   {
     id: 3,
-    name: 'Production Line',
+    name: 'Automated Assembly Line',
     status: 'down',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
-    location: 'Manufacturing Floor C'
+    location: 'Final Assembly Zone'
   },
 ];
 
