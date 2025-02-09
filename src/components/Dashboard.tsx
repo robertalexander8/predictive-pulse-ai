@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { CheckCircle, XCircle, Calendar } from "lucide-react";
 import MachineSensors from "./MachineSensors";
@@ -11,6 +12,7 @@ interface Machine {
   name: string;
   status: MachineStatus;
   image: string;
+  location?: string;
 }
 
 const machines: Machine[] = [
@@ -19,18 +21,21 @@ const machines: Machine[] = [
     name: 'CNC Milling Machine',
     status: 'healthy',
     image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82',
+    location: 'Production Hall A'
   },
   {
     id: 2,
     name: 'Industrial Robot Arm',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    image: 'https://images.unsplash.com/photo-1565939318951-17217c77f4d1',
+    location: 'Assembly Line B'
   },
   {
     id: 3,
     name: 'Production Line',
     status: 'down',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    location: 'Manufacturing Floor C'
   },
 ];
 
@@ -61,6 +66,31 @@ const Dashboard = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Card className="col-span-1 lg:col-span-2 p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
         <h2 className="text-xl font-semibold mb-4">Equipment Health</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+          {machines.map((machine) => (
+            <div 
+              key={machine.id}
+              className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm"
+            >
+              <img 
+                src={machine.image} 
+                alt={machine.name}
+                className="w-full h-32 object-cover rounded-lg mb-3"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
+              />
+              <h3 className="font-semibold text-gray-900 dark:text-gray-100">{machine.name}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{machine.location}</p>
+              <div className="flex items-center mt-2">
+                {getStatusIcon(machine.status)}
+                <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+                  {getStatusText(machine.status)}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
         <MachineSensors />
       </Card>
 
