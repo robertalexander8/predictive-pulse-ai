@@ -1,6 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { CheckCircle, XCircle, Calendar } from "lucide-react";
+import { CheckCircle, XCircle, Calendar, Thermometer, Gauge, Activity, Clock } from "lucide-react";
 import MachineSensors from "./MachineSensors";
 import PredictiveChart from "./PredictiveChart";
 import AlertsPanel from "./AlertsPanel";
@@ -13,6 +13,10 @@ interface Machine {
   status: MachineStatus;
   image: string;
   location?: string;
+  temperature: number;
+  pressure: number;
+  vibration: number;
+  nextMaintenance: string;
 }
 
 const machines: Machine[] = [
@@ -21,22 +25,56 @@ const machines: Machine[] = [
     name: 'Haas VF-2 CNC Machine',
     status: 'healthy',
     image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82',
-    location: 'Precision Machining Bay'
+    location: 'Precision Machining Bay',
+    temperature: 65.2,
+    pressure: 82.5,
+    vibration: 45.3,
+    nextMaintenance: '2024-04-15'
   },
   {
     id: 2,
     name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: '/lovable-uploads/35b7e282-7b4b-4aee-b5a7-4f6442e16871.jpeg',
-    location: 'Robotic Assembly Cell 3'
+    image: 'https://images.unsplash.com/photo-1581092446327-9b52bd1570c2',
+    location: 'Robotic Assembly Cell 3',
+    temperature: 58.7,
+    pressure: 78.9,
+    vibration: 42.1,
+    nextMaintenance: '2024-03-20'
   },
   {
     id: 3,
     name: 'Automated Assembly Line',
     status: 'down',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
-    location: 'Final Assembly Zone'
+    location: 'Final Assembly Zone',
+    temperature: 72.4,
+    pressure: 88.2,
+    vibration: 56.8,
+    nextMaintenance: '2024-03-25'
   },
+  {
+    id: 4,
+    name: 'Laser Cutting System',
+    status: 'healthy',
+    image: '',
+    location: 'Metal Fabrication Area',
+    temperature: 68.9,
+    pressure: 80.1,
+    vibration: 44.5,
+    nextMaintenance: '2024-04-10'
+  },
+  {
+    id: 5,
+    name: 'Quality Inspection Robot',
+    status: 'healthy',
+    image: '',
+    location: 'Quality Control Zone',
+    temperature: 63.5,
+    pressure: 79.8,
+    vibration: 41.2,
+    nextMaintenance: '2024-04-05'
+  }
 ];
 
 const getStatusIcon = (status: MachineStatus) => {
@@ -66,27 +104,49 @@ const Dashboard = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <Card className="col-span-1 lg:col-span-2 p-6 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
         <h2 className="text-xl font-semibold mb-4">Equipment Health</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-1 gap-4 mb-6">
           {machines.map((machine) => (
             <div 
               key={machine.id}
               className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm"
             >
-              <img 
-                src={machine.image} 
-                alt={machine.name}
-                className="w-full h-32 object-cover rounded-lg mb-3"
-                onError={(e) => {
-                  e.currentTarget.src = '/placeholder.svg';
-                }}
-              />
-              <h3 className="font-semibold text-gray-900 dark:text-gray-100">{machine.name}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{machine.location}</p>
-              <div className="flex items-center mt-2">
-                {getStatusIcon(machine.status)}
-                <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">
-                  {getStatusText(machine.status)}
-                </span>
+              <div className="flex justify-between items-start">
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100">{machine.name}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{machine.location}</p>
+                  <div className="flex items-center mt-2">
+                    {getStatusIcon(machine.status)}
+                    <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">
+                      {getStatusText(machine.status)}
+                    </span>
+                  </div>
+                </div>
+                <div className="grid grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <Thermometer className="h-5 w-5 mx-auto text-blue-500" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">
+                      {machine.temperature}°C
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <Gauge className="h-5 w-5 mx-auto text-purple-500" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">
+                      {machine.pressure} PSI
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <Activity className="h-5 w-5 mx-auto text-green-500" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">
+                      {machine.vibration} Hz
+                    </span>
+                  </div>
+                  <div className="text-center">
+                    <Clock className="h-5 w-5 mx-auto text-orange-500" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 block">
+                      {new Date(machine.nextMaintenance).toLocaleDateString()}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
