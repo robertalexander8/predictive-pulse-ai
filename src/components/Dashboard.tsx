@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { CheckCircle, XCircle, Calendar, Thermometer, Gauge, Activity, Clock } from "lucide-react";
 import MachineSensors from "./MachineSensors";
@@ -35,7 +34,7 @@ const machines: Machine[] = [
     id: 2,
     name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1581093458791-9f2c5a381161',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
     location: 'Robotic Assembly Cell 3',
     temperature: 58.7,
     pressure: 78.9,
