@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { CheckCircle, XCircle, Calendar, Thermometer, Gauge, Activity, Clock } from "lucide-react";
 import MachineSensors from "./MachineSensors";
@@ -34,7 +35,7 @@ const machines: Machine[] = [
     id: 2,
     name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
     location: 'Robotic Assembly Cell 3',
     temperature: 58.7,
     pressure: 78.9,
@@ -45,7 +46,7 @@ const machines: Machine[] = [
     id: 3,
     name: 'Automated Assembly Line',
     status: 'down',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
     location: 'Final Assembly Zone',
     temperature: 72.4,
     pressure: 88.2,
@@ -56,7 +57,7 @@ const machines: Machine[] = [
     id: 4,
     name: 'Laser Cutting System',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e',
+    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
     location: 'Metal Fabrication Area',
     temperature: 68.9,
     pressure: 80.1,
@@ -67,7 +68,7 @@ const machines: Machine[] = [
     id: 5,
     name: 'Quality Inspection Robot',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1581093588401-fbb62a02f120',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
     location: 'Quality Control Zone',
     temperature: 63.5,
     pressure: 79.8,
