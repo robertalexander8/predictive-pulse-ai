@@ -1,4 +1,3 @@
-
 import { Card } from "@/components/ui/card";
 import { CheckCircle, XCircle, Calendar, Thermometer, Gauge, Activity, Clock } from "lucide-react";
 import MachineSensors from "./MachineSensors";
@@ -24,7 +23,7 @@ const machines: Machine[] = [
     id: 1,
     name: 'Haas VF-2 CNC Machine',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1647427060118-4911c9821b82',
+    image: 'https://www.haascnc.com/content/dam/haascnc/machines/vertical-mills/vf-series/vf-2/assets/VF-2_MDI_ISO_V2.jpg/_jcr_content/renditions/original',
     location: 'Precision Machining Bay',
     temperature: 65.2,
     pressure: 82.5,
@@ -35,7 +34,7 @@ const machines: Machine[] = [
     id: 2,
     name: 'KUKA KR-150 Robot',
     status: 'maintenance',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    image: 'https://www.kuka.com/-/media/kuka-corporate/images/products/industrial-robots/kr-quantec/kr-quantec-prime/kr_quantec_prime_1.jpg',
     location: 'Robotic Assembly Cell 3',
     temperature: 58.7,
     pressure: 78.9,
@@ -46,7 +45,7 @@ const machines: Machine[] = [
     id: 3,
     name: 'Automated Assembly Line',
     status: 'down',
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1',
+    image: 'https://www.assemblymag.com/ext/resources/Issues/2017/September/asb0917automation1.jpg',
     location: 'Final Assembly Zone',
     temperature: 72.4,
     pressure: 88.2,
@@ -57,7 +56,7 @@ const machines: Machine[] = [
     id: 4,
     name: 'Laser Cutting System',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334',
+    image: 'https://www.bystronic.com/content/dam/bystronic/Images/Products/Systems/ByStar%20Fiber/ByStar_Fiber_12kW_01.jpg',
     location: 'Metal Fabrication Area',
     temperature: 68.9,
     pressure: 80.1,
@@ -68,7 +67,7 @@ const machines: Machine[] = [
     id: 5,
     name: 'Quality Inspection Robot',
     status: 'healthy',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    image: 'https://www.qualitymag.com/ext/resources/Issues/2021/March/Vision-Systems/QM0321-Vision-Report-feat-1.jpg',
     location: 'Quality Control Zone',
     temperature: 63.5,
     pressure: 79.8,
